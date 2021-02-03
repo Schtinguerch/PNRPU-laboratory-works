@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.lml": "vb",
+        "*.xshd": "xml",
+        "fstream": "cpp"
+    }
+}
