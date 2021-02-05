@@ -1,29 +1,45 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <Windows.h>
 
 using namespace std;
 
 bool IsWordLetter(char x)
 {
     x = tolower(x);
-    bool is_letter = ((x >= 'a') && (x <= 'z')) || ((x >= 'а') && (x <= 'я'));
+    bool isLetter = ((x >= 'a') && (x <= 'z')) || ((x >= 'а') && (x <= 'я'));
 
-    return is_letter;
-}
-
-int WordLength(string word)
-{
-
+    return isLetter;
 }
 
 int ShortWordLength(string expression) 
 {
+    int 
+        wordLength = 0, 
+        shortWordLength = INT_MAX;
 
+    for (int i = 0; i < expression.length(); i++)
+    {
+        if (IsWordLetter(expression[i])) 
+            wordLength++;
+        else 
+        {
+            if ((wordLength < shortWordLength) && (wordLength != 0))
+                shortWordLength = wordLength;
+
+            wordLength = 0;
+        }
+    }
+
+    return shortWordLength;
 }
 
 int main()
 {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
     int shortestWordIndex, 
         shortestWordLength = INT_MAX,
         workIndex = 0;
@@ -46,8 +62,11 @@ int main()
                 shortestWordIndex = workIndex;
                 shortestWordLength = minLength;
             } 
+
+            cout << "row #" << workIndex << ": \"" << row << "\": " << minLength << endl;
         }
 
+        //go to very beginning
         workIndex = 0;
         inputFile.seekg(ios_base::beg);
 
@@ -62,7 +81,7 @@ int main()
                 outputFile << row << endl;
         }
 
-        cout << "String row №" << shortestWordIndex << "has the shortest word!!!";
+        cout << "String row #" << shortestWordIndex << " has the shortest word!!!";
     }
     else 
     {
