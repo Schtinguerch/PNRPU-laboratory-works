@@ -2,6 +2,7 @@
     "files.associations": {
         "*.lml": "vb",
         "*.xshd": "xml",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "iostream": "cpp"
     }
 }
