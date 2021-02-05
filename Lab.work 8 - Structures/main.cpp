@@ -16,11 +16,22 @@ bool _IsProcessSuccessful = true;
 
 struct Videotape
 {
-    string filmName;
-    string producer;
-    float timeDuration;
-    float cost;
+    char filmName[20];
+    char producer[20];
+    int timeDuration;
+    int cost;
 };
+
+int InputNaturalNum() 
+{
+    int number;
+
+    do
+        cin >> number;
+    while ((number < 1) || (number > 100));
+    
+    return number;
+}
 
 Videotape InputVideotape() 
 {
@@ -31,6 +42,7 @@ Videotape InputVideotape()
     input.timeDuration = InputNaturalNum();
     input.cost = InputNaturalNum();
 
+    cout << endl;
     return input;
 }
 
@@ -61,10 +73,10 @@ void PrintVideotapes(Videotape* tapes, int tapesCount)
     for (int i = 0; i < tapesCount; i++) 
     {
         cout << "Videotype #" << i + 1 << ": " << endl;
-        cout << " film's name     - " << (tapes + i)->filmName << endl;
-        cout << " film's producer - " << (tapes + i)->producer << endl;
-        cout << " film's duration - " << (tapes + i)->timeDuration << " minutes" << endl;
-        cout << " videotape's cost     - " << (tapes + i)->cost << " dollars" << endl << endl;
+        cout << " film's name      - " << (tapes + i)->filmName << endl;
+        cout << " film's producer  - " << (tapes + i)->producer << endl;
+        cout << " film's duration  - " << (tapes + i)->timeDuration << " minutes" << endl;
+        cout << " videotape's cost - " << (tapes + i)->cost << " dollars" << endl << endl;
     }
 }
 
@@ -75,17 +87,6 @@ void DeleteVideotape(Videotape* tapes, int deleteIndex, int& tapesCount)
 
     *(tapes + tapesCount - 1) = Videotape { "", "", 0, 0 };
     tapesCount--;
-}
-
-int InputNaturalNum() 
-{
-    int number;
-
-    do
-        cin >> number;
-    while ((number < 1) || (number > 100));
-    
-    return number;
 }
 
 int main() 
@@ -101,7 +102,8 @@ int main()
         int i = 0;
         while ((i < tapesCount) && _IsProcessSuccessful) 
         {
-            _IsProcessSuccessful = WriteVideotape(file, &InputVideotape());
+            Videotape workVideotape = InputVideotape();
+            _IsProcessSuccessful = WriteVideotape(file, &workVideotape);
             i++;
         }
 
@@ -138,7 +140,7 @@ int main()
                     << " - film's name" << endl
                     << " - film's producer " << endl
                     << " - film's duration (minutes)" << endl
-                    << " - videotape's cost (USD)";
+                    << " - videotape's cost (USD)" << endl;
 
                 file = fopen("Work files\\F.dat", "ab");
                 for (int i = 0; i < ADD_COUNT; i++) 
