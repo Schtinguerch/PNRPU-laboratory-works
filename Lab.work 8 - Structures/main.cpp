@@ -6,6 +6,7 @@
 using namespace std;
 
 const int MAX_LENGTH = 100;
+const int MAX_NAME_LENGTH = 20;
 const int ADD_COUNT = 3;
 const string OpenFileErrorMessage = "Error: the file is not open!!!";
 const string SecondOpenFileErronMessage = "Error: the file (second opening) is not open!!!";
@@ -16,8 +17,8 @@ bool _IsProcessSuccessful = true;
 
 struct Videotape
 {
-    char filmName[20];
-    char producer[20];
+    char filmName[MAX_NAME_LENGTH];
+    char producer[MAX_NAME_LENGTH];
     int timeDuration;
     int cost;
 };
@@ -37,9 +38,18 @@ Videotape InputVideotape()
 {
     Videotape input;
 
-    cin  >> input.filmName >> input.producer;
+    cin.ignore();
+
+    cout << "name:";
+    cin.getline(input.filmName, MAX_NAME_LENGTH, '\n');
+
+    cout << "producer:";
+    cin.getline(input.producer, MAX_NAME_LENGTH, '\n');
     
+    cout << "duration:";
     input.timeDuration = InputNaturalNum();
+
+    cout << "cost:";
     input.cost = InputNaturalNum();
 
     cout << endl;
