@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <Windows.h>
 
 using namespace std;
 
@@ -37,9 +36,6 @@ int ShortWordLength(string expression)
 
 int main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-
     int shortestWordIndex, 
         shortestWordLength = INT_MAX,
         workIndex = 0;
