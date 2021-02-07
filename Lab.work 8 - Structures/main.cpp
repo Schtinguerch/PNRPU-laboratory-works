@@ -169,5 +169,6 @@ int main()
     else 
         cout << OPEN_FILE_ERROR << endl;
     
+    system("pause");
     return 0;
 }
