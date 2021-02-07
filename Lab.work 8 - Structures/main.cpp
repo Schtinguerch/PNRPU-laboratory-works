@@ -1,17 +1,15 @@
 #include <iostream>
-#include <fstream>
-#include <string>
 #include <stdio.h>
 
-using namespace std;
+#define MAX_LENGTH 100
+#define MAX_NAME_LENGTH 30
+#define ADD_COUNT 3
 
-const int MAX_LENGTH = 100;
-const int MAX_NAME_LENGTH = 20;
-const int ADD_COUNT = 3;
-const string OpenFileErrorMessage = "Error: the file is not open!!!";
-const string SecondOpenFileErronMessage = "Error: the file (second opening) is not open!!!";
-const string WriteFileErrorMessage = "Error: writing to file is failed!!!";
-const string SecondWriteFileErrorMessage = "Error: writing (second) to file is failed!!!";
+#define OPEN_FILE_ERROR "Error: the file is not open!!!"
+#define WRITE_FILE_ERROR "Error: writing to file is failed!!!"
+#define SUCCESS "All file operations was successfully done!!!"
+
+using namespace std;
 
 bool _IsProcessSuccessful = true;
 
@@ -29,7 +27,7 @@ int InputNaturalNum()
 
     do
         cin >> number;
-    while ((number < 1) || (number > 100));
+    while (number < 1);
     
     return number;
 }
@@ -40,16 +38,16 @@ Videotape InputVideotape()
 
     cin.ignore();
 
-    cout << "name:";
+    cout << "name: ";
     cin.getline(input.filmName, MAX_NAME_LENGTH, '\n');
 
-    cout << "producer:";
+    cout << "producer: ";
     cin.getline(input.producer, MAX_NAME_LENGTH, '\n');
     
-    cout << "duration:";
+    cout << "duration: ";
     input.timeDuration = InputNaturalNum();
 
-    cout << "cost:";
+    cout << "cost: ";
     input.cost = InputNaturalNum();
 
     cout << endl;
@@ -109,6 +107,7 @@ int main()
         cout << "Input count of videotapes (1 to 100):" << endl;
         int tapesCount = InputNaturalNum();
 
+        cout << "Input data for " << tapesCount << " new videotapes:" << endl;
         int i = 0;
         while ((i < tapesCount) && _IsProcessSuccessful) 
         {
@@ -146,40 +145,29 @@ int main()
                 cout << "Left videotapes:" << endl;
                 PrintVideotapes(tapes, tapesCount);
 
-                cout << "Input data for " << ADD_COUNT << " new videotapes:" << endl
-                    << " - film's name" << endl
-                    << " - film's producer " << endl
-                    << " - film's duration (minutes)" << endl
-                    << " - videotape's cost (USD)" << endl;
+                cout << "Input data for " << ADD_COUNT << " new videotapes:" << endl;
 
                 file = fopen("Work files\\F.dat", "ab");
-                for (int i = 0; i < ADD_COUNT; i++) 
+                i = 0;
+                while ((i < ADD_COUNT) && _IsProcessSuccessful)
                 {
                     tapes[tapesCount] = InputVideotape();
                     _IsProcessSuccessful = WriteVideotape(file, &tapes[tapesCount]);
 
                     tapesCount++;
+                    i++;
                 }
 
-                if (_IsProcessSuccessful)
-                    cout << "All file operations was succeessfully done!!!" << endl;
-                else 
-                    cout << SecondWriteFileErrorMessage << endl;
+                cout << (_IsProcessSuccessful) ? SUCCESS : WRITE_FILE_ERROR;
             }
-
-
             else
-                cout << SecondOpenFileErronMessage << endl;
+                cout << OPEN_FILE_ERROR << endl;
         }
         else 
-            cout << WriteFileErrorMessage << endl;
+            cout << WRITE_FILE_ERROR << endl;
     }
     else 
-    {
-        fclose(file);
-        cout << OpenFileErrorMessage << endl;
-    }
-
-
+        cout << OPEN_FILE_ERROR << endl;
+    
     return 0;
 }
