@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include <Windows.h>
-#include <codecvt>
 
 using namespace std;
 
@@ -35,16 +34,13 @@ int ShortWordLength(string expression)
 
 int main()
 {
-  //  SetConsoleCP(1251);
-   // SetConsoleOutputCP(1251);
-
     system("chcp 1251>null");
 
     int shortestWordIndex, 
         shortestWordLength = INT_MAX,
         workIndex = 0;
 
-	std::ifstream inputFile("Work files\\F1.txt");
+	ifstream inputFile("Work files\\F1.txt");
     ofstream outputFile("Work files\\F2.txt");
 
     if (inputFile.is_open()) 
@@ -86,10 +82,10 @@ int main()
     else 
     {
         cout << "Error: the file is not open!!!" << endl << endl
-            << "Please, check does Work files\\F1.txt exist"
-            << "and check the file status (is the file read only or protected)";
+            << "Please, check does Work files\\F1.txt exist" << endl;
     }
 
+    cout << endl << endl << endl << endl;
     system("pause");
     return 0;
 }
