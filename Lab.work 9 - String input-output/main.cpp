@@ -1,15 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <Windows.h>
+#include <codecvt>
 
 using namespace std;
 
 bool IsWordLetter(char x)
 {
-    x = tolower(x);
-    bool isLetter = ((x >= 'a') && (x <= 'z')) || ((x >= 'а') && (x <= 'я'));
-
-    return isLetter;
+    return (toupper(x) != tolower(x)) || ((int)x == -1);
 }
 
 int ShortWordLength(string expression) 
@@ -36,11 +35,16 @@ int ShortWordLength(string expression)
 
 int main()
 {
+  //  SetConsoleCP(1251);
+   // SetConsoleOutputCP(1251);
+
+    system("chcp 1251>null");
+
     int shortestWordIndex, 
         shortestWordLength = INT_MAX,
         workIndex = 0;
 
-    ifstream inputFile("Work files\\F1.txt");
+	std::ifstream inputFile("Work files\\F1.txt");
     ofstream outputFile("Work files\\F2.txt");
 
     if (inputFile.is_open()) 
@@ -86,5 +90,6 @@ int main()
             << "and check the file status (is the file read only or protected)";
     }
 
+    system("pause");
     return 0;
 }

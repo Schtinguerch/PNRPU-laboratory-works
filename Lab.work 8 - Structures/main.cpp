@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <Windows.h>
 
 #define MAX_LENGTH 100
 #define MAX_NAME_LENGTH 30
@@ -99,6 +100,9 @@ void DeleteVideotape(Videotape* tapes, int deleteIndex, int& tapesCount)
 
 int main() 
 {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
     FILE* file = fopen("Work files\\F.dat", "wb");
     if (file != NULL) 
     {
