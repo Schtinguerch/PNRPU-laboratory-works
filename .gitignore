@@ -1,3 +1,6 @@
-/Lab.work 9 - String input-output/Docs/Lab.work 9, Report.docx
-/Lab.work 9 - String input-output/Work files/F1.txt
-/Lab.work 9 - String input-output/Work files/F2.txt
+*.docx
+*.txt
+*.png
+*.jpg
+*.drawio
+*.json
