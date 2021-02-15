@@ -1,5 +1,4 @@
 #include <iostream>
-#include <Windows.h>
 
 using namespace std;
 
@@ -35,7 +34,7 @@ void PrintMatrix(int** matrix)
     for (int i = 0; i < _rowCount; i++)
     {
         for (int j = 0; j < _columnCount; j++)
-            cout << matrix[i][j] << ' ';
+            cout << matrix[i][j] << '\t';
 
         cout << endl;
     }
@@ -46,17 +45,6 @@ void AddNewRow(int**& baseMatrix, int rowNumber)
     rowNumber--;
     _rowCount++;
     int** newMatrix = new int*[_rowCount];
-
-    /*
-    for (int i = 0; i < _rowCount; i++) 
-    {
-        newMatrix[i] = new int[_columnCount];
-        if (i != rowNumber)
-            newMatrix[i] = baseMatrix[i];
-        else 
-            for (int j = 0; j < _columnCount; j++)
-                newMatrix[i][j] = 1;
-    } */
 
     int i = 0;
     while ((i != rowNumber) && (i < _rowCount))
@@ -77,6 +65,7 @@ void AddNewRow(int**& baseMatrix, int rowNumber)
     }
 
     baseMatrix = newMatrix;
+    delete[] newMatrix;
 }
 
 void AddNewColumn(int**& baseMatrix, int columnNumber)
@@ -102,29 +91,28 @@ void AddNewColumn(int**& baseMatrix, int columnNumber)
     }
 
     baseMatrix = newMatrix;
+    delete[] newMatrix;
 }
 
 int main() 
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-
-    cout << "Введите количество строк и столбцов для формирования матрицы:" << endl;
+    cout << "Enter the row's count and column's count of new matrix:" << endl;
     int rowCount = ReadNaturalNum(), columnCount = ReadNaturalNum();
 
     int** matrix = NewMatrix(rowCount, columnCount);
     PrintMatrix(matrix);
 
-    cout << "Введите номер строки, в который нужно добавить новую строку:" << endl;
+    cout << "Enter row's index where you'll add new row:" << endl;
     int index = ReadNaturalNum();
     AddNewRow(matrix, index);
     PrintMatrix(matrix);
 
-    cout << "Введите номер столбца, в который нужно добавить новый столбец:" << endl;
+    cout << "Enter column's index where you'll add new column:" << endl;
     index = ReadNaturalNum();
     AddNewColumn(matrix, index);
     PrintMatrix(matrix);
 
     system("pause");
+    delete[] matrix;
     return 0;
 }
