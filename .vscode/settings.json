@@ -44,6 +44,18 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "list": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "stack": "cpp",
+        "algorithm": "cpp",
+        "codecvt": "cpp",
+        "ctime": "cpp",
+        "deque": "cpp",
+        "locale": "cpp",
+        "random": "cpp",
+        "vector": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp"
     }
 }
