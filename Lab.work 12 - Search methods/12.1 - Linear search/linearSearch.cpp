@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Windows.h"
 #define INPUT_COUNT_MESSAGE "Enter count of items:"
 #define INPUT_KEY_MESSAGE "Enter a key to found the items:"
 
@@ -78,6 +79,9 @@ void FindPeople(Person* persons, int searchKey)
 
 int main()
 {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
     cout << INPUT_COUNT_MESSAGE << endl;
     _personsCount = ReadNaturalNum();
 
