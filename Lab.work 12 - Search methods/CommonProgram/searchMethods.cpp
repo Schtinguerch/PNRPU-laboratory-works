@@ -70,7 +70,7 @@ void InterpolFindPeople(Person* persons, int searchKey)
     int 
         middle,
         left = 0,
-        right = _personsCount,
+        right = _personsCount - 1,
         startIndex = -1;
 
     while ((persons[left].passportNumber <= searchKey) && (persons[right].passportNumber >= searchKey))
