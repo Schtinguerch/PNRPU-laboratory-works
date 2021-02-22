@@ -159,6 +159,8 @@ int ReadNaturalNum()
 {
     int x;
     do cin >> x; while (x <= 0);
+
+    cin.ignore();
     return x;
 }
 
@@ -183,7 +185,6 @@ void InputNewPersons()
     for (int i = 0; i < _personsCount; i++)
     {
         cout << endl << "Full name:       ";
-        cin.ignore();
         getline(cin, _persons[i].fullName);
 
         cout << "Passport number: ";
