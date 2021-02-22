@@ -136,7 +136,7 @@ int main()
     cout << NEW_INPUT_MESSAGE << endl;
     int index = ReadNaturalNum();
 
-    AddNewItem(firstItem, lastItem, index);
+    AddNewItem(firstItem, lastItem, _queueLength - index + 2);
     PrintQueue(lastItem);
 
     system("pause");
