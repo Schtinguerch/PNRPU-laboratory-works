@@ -5,6 +5,8 @@
 
 using namespace std;
 
+int _turns = 0;
+
 enum Queen 
 {
     Set, Delete
@@ -38,6 +40,9 @@ void PrintField(int** chessField)
     }
 
     field += '\n';
+
+    _turns++;
+    cout << "turn# " << _turns << endl;
     cout << field;
 }
 
