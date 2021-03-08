@@ -1,0 +1,38 @@
+layout count: 9
+
+Dvorak
+August Dvorak
+English
+1936
+SchtDvorak
+Lev Shumilov
+English
+2020
+Colemak
+Shai Coleman
+English
+2007
+SchtTienVingers
+Lev Shumilov
+Russian
+2021
+QWERTY
+Christopher Latham Sholes
+English
+1867
+Neo Deutsch
+The Neo Users
+German
+2004
+ЙЦУКЕН
+Доподлинно не известно
+Russian
+1907
+Диктор
+Олег Пудеев
+Russian
+2006
+Capewell-Dvorak
+Michael Capewell
+English
+2004
