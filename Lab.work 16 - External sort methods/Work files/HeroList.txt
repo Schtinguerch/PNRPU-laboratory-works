@@ -1,0 +1,84 @@
+Akande Ogundimu
+Damage dealer
+2030
+Reinhardt Wilhelm
+Tank
+2015
+Jack Fransis Morrison
+Damage dealer
+2020
+Jesse McCree
+Damage dealer
+2038
+Mako Rutledge
+Tank
+2027
+Elizabeth Caledonia Ashe
+Damage dealer
+2036
+Gabriel Reyes
+Damage dealer
+2018
+Moira O'Deorain
+Healer
+2027
+Angela Ziegler
+Healer
+2038
+Siebren de Kuiper
+Tank
+2014
+Mei-Ling Zhou
+Damage dealer
+2035
+Hanzo Shimada
+Damage dealer
+2037
+Ana Amari
+Healer
+2016
+Amelie Lacroix
+Damage dealer
+2042
+Efi Oladele
+Scientist
+2064
+Jean-Baptiste Augustin
+Header
+2039
+Genji Shimada
+Damage dealer
+2040
+Winston Gorilla
+Tank
+2046
+Tekcharta Zenyatta
+Healer
+2060
+Torbjorn lindholm
+Damage dealer
+2019
+Александра Зарянова
+Tank
+2047
+Satya Vaswani
+Damage dealer
+2047
+Lena Oxton
+Damage dealer
+2049
+Lucio Correia dos Santos
+Header
+2049
+Jamison Fawkes
+Damage dealer
+2050
+Brigitte Lindholm
+Healer
+2052
+Fareeha Amari
+Damage dealer
+2043
+Hana song D.Va
+Tank
+2056

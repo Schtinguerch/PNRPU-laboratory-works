@@ -4,7 +4,7 @@ using namespace std;
 class Person
 {
 private:
-    string _name;
+    string _name = "Janina Kowalski";
 
     float _salary = 0;
     int _daysWorked = 0;
@@ -130,8 +130,11 @@ public:
 
 int main()
 {
-    Person a("lev", 123.234, 30, 15);
-    a.PrintPersonData();
+    Person firstPerson("Amelie", 25000.17, 30, 21);
+    firstPerson = Person("Jerare", 34021.63, 31, 22);
+
+    Person* secondPerson = new Person("Olivia", 56000, 28, 20);
+    delete[] secondPerson;
 
     return 0;
 }
