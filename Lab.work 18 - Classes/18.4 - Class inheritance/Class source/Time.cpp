@@ -1,4 +1,4 @@
-#include "Time.h"
+#include "../Header files/Time.h"
 #include <iostream>
 
 void Time::SetFirst(int first)

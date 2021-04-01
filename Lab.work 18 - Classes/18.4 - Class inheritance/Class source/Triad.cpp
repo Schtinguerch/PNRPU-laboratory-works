@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Triad.h"
+#include "../Header files/Triad.h"
 
 void Triad::SetTriad(int first, int second, int third)
 {
