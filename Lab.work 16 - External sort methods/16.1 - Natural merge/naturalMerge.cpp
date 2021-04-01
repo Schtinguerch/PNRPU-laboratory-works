@@ -2,7 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <Windows.h>
+#include "Windows.h"
 
 using namespace std;
 
@@ -13,47 +13,76 @@ struct Hero
     int BirthYear;
 };
 
-void MergeSort(vector<Hero>& a, int start, int end)
+bool IsOrdered(int first, int second)
 {
-    int workLength = end - start;
+    return first >= second;
+}
 
-    if (workLength < 2)
-        return;
-    if (workLength == 2)
-    {
-        if (a[start].BirthYear > a[start + 1].BirthYear)
-            swap(a[start], a[start + 1]);
-    }
-
-    MergeSort(a, start, start + workLength / 2);
-    MergeSort(a, start + workLength / 2, end);
-
+vector<Hero> Merge(vector<Hero>& first, vector<Hero>& second)
+{
     vector<Hero> buffer;
-    int bl = start;
-    int el = start + workLength / 2;
-    int b2 = el;
+    int
+        firstPonter = 0,
+        secondPointer = 0;
 
-    while (buffer.size() < workLength)
+    while (firstPonter < first.size())
     {
-        if(bl >= el || (b2 < end && a[b2].BirthYear <= a[bl].BirthYear))
+        if (first[firstPonter].BirthYear < second[secondPointer].BirthYear)
         {
-            buffer.push_back(a[b2]);
-            b2++;
+            buffer.push_back(first[firstPonter]);
+            firstPonter++;
         }
-        else 
+        else
         {
-            buffer.push_back(a[bl]);
-            bl++;
+            buffer.push_back(second[secondPointer]);
+            secondPointer++;
         }
-    }
+    }  
 
-    for (int i = start; i < end; i++)
-        a[i] = buffer[i - start];
+    return buffer;
 }
 
 void MergeSort(vector<Hero>& heros)
 {
-    MergeSort(heros, 0, heros.size());
+    vector<vector<Hero>> 
+        firstQueue,
+        secondQueue;
+    
+    int 
+        writingIndex = 0,
+        currentRange[] {0, -1};
+
+    do 
+    {
+        int previous = heros[0].BirthYear - 1;
+        for (auto hero : heros)
+        {
+            int current = hero.BirthYear;
+            if (!IsOrdered(current, previous))
+            {
+                writingIndex = (writingIndex == 0)? 1 : 0;
+                currentRange[writingIndex]++;
+            }
+
+            if (writingIndex == 0)
+                firstQueue[currentRange[0]].push_back(hero);
+            else 
+                secondQueue[currentRange[1]].push_back(hero);
+
+            previous = hero.BirthYear;
+        }
+
+        heros.clear();
+        int i = 0;
+        for (i; i < secondQueue.size(); i++)
+        {
+            vector<Hero> buffer = Merge(firstQueue[i], secondQueue[i]);
+            heros.insert(heros.end(), buffer.begin(), buffer.end());
+        }
+        if (firstQueue.size() > secondQueue.size())
+            heros.insert(heros.end(), firstQueue[secondQueue.size()].begin(), firstQueue[secondQueue.size()].end());
+    }
+    while (secondQueue.size() > 0);
 }
 
 void PrintHero(Hero hero, int orderNumber)
