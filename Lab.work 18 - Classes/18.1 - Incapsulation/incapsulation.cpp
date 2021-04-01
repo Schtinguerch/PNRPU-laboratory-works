@@ -9,7 +9,7 @@ private:
     float _salary = 0;
     int _daysWorked = 0;
 
-    float _totalSalary;
+    float _totalSalary = 0;
     int _daysInMonth = 31;
 
     void ComputeSalary()
@@ -35,7 +35,7 @@ public:
         }
         else 
         {
-            cout << "Error: invalid salary!!!" << endl;
+            cout << "Error: invalid salary!!! less than 0." << endl;
             return false;
         }
     }
@@ -44,7 +44,7 @@ public:
 
     bool SetDaysWorked(int days)
     {
-        if (days >= 0)
+        if ((days >= 0) && (days <= _daysInMonth))
         {
             _daysWorked = days;
             ComputeSalary();
@@ -52,7 +52,7 @@ public:
         }
         else
         {
-            cout << "Error: invalid days!!!" << endl;
+            cout << "Error: invalid days!!! less than 0 or more than days in month." << endl;
             return false;
         }
     }
@@ -131,10 +131,16 @@ public:
 int main()
 {
     Person firstPerson("Amelie", 25000.17, 30, 21);
-    firstPerson = Person("Jerare", 34021.63, 31, 22);
+    firstPerson.PrintPersonData();
 
-    Person* secondPerson = new Person("Olivia", 56000, 28, 20);
-    delete[] secondPerson;
+    firstPerson.ReadPersonData();
+    firstPerson.PrintPersonData();
+
+    firstPerson.SetSalary(-1);
+    firstPerson.SetDaysWorked(100);
+    firstPerson.SetDaysInMonth(13);
+
+    firstPerson.PrintPersonData();
 
     return 0;
 }
