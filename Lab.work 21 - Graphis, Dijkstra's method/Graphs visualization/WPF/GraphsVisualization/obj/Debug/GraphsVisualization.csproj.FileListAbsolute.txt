@@ -1,0 +1,15 @@
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\bin\Debug\GraphsVisualization.exe.config
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\bin\Debug\GraphsVisualization.exe
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\bin\Debug\GraphsVisualization.pdb
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\GraphsVisualization.csprojAssemblyReference.cache
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\MainWindow.g.cs
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\App.g.cs
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\GraphsVisualization_MarkupCompile.cache
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\GraphsVisualization_MarkupCompile.lref
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\MainWindow.baml
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\GraphsVisualization.g.resources
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\GraphsVisualization.Properties.Resources.resources
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\GraphsVisualization.csproj.GenerateResource.cache
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\GraphsVisualization.csproj.CoreCompileInputs.cache
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\GraphsVisualization.exe
+C:\Users\2sust\source\repos\GraphsVisualization\GraphsVisualization\obj\Debug\GraphsVisualization.pdb
