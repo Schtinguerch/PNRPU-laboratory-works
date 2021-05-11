@@ -1,0 +1,53 @@
+﻿<Window x:Class="GraphsVisualization.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GraphsVisualization"
+        mc:Ignorable="d"
+        Title="Graph Dijkstra Visualization" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <StackPanel 
+                Orientation="Vertical" 
+                Margin="10">
+                <Label>Таблица смежности</Label>
+                <TextBox x:Name="ElementDataTextBox" Padding="5"></TextBox>
+                
+                <Label>Вершина А</Label>
+                <TextBox x:Name="FirstElementTextBox" Padding="5"></TextBox>
+                
+                <Label>Вершина Б</Label>
+                <TextBox x:Name="SecondElemetTextBox" Padding="5"></TextBox>
+
+                <Button 
+                    Content="Посчитать" 
+                    Margin=" 0 24 0 0" 
+                    Padding="5"
+                    Click="ButtonBase_OnClick">
+                </Button>
+            </StackPanel>
+
+            <StackPanel
+                Orientation="Vertical" 
+                VerticalAlignment="Bottom"
+                Margin="10">
+
+                <Label>Длина пути</Label>
+                <TextBox x:Name="RootLengthTextBox" Padding="5"></TextBox>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Canvas x:Name="GraphCanvas">
+
+            </Canvas>
+        </Grid>
+    </Grid>
+</Window>
