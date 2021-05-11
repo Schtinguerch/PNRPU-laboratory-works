@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>735</width>
+    <height>548</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Лабораторная работа №20: деревья</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow, QWidget {
+    background-color: white;
+}
+
+QGraphicsView, QLineEdit, QPushButton {
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 12px;
+    padding: 6px;
+}
+
+QLineEdit, QLabel, QPushButton {
+    color: #323232;
+    font-family: &quot;bahnschrift semibold&quot;;
+    font-size: 16px;
+}
+
+QLineEdit:focus {
+   border: 2px solid aqua;
+}
+
+QPushButton {
+    background-color: #EEEEEE;
+}
+
+QPushButton:hover {
+   background-color: aqua;
+   border: 2px solid aqua;
+}
+
+QPushButton:pressed {
+   background-color: deepskyblue;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGraphicsView" name="graphicsView"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="openFilePushButton">
+        <property name="text">
+         <string>Открыть данные заново</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="DrawTreePushButton">
+        <property name="text">
+         <string>Нарисовать дерево</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ClearTreePushButton">
+        <property name="text">
+         <string>Очистить холст</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
