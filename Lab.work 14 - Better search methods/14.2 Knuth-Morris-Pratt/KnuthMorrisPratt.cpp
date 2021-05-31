@@ -65,7 +65,7 @@ int* OffsetPi(string substring)
 
 int KnuthMorrisPrattSearch(string baseString, string substring)
 {
-    int 
+t    int 
         baseStrLength = baseString.size(), 
         subStrLength = substring.size(),
         firstEntryIndex = -1,
